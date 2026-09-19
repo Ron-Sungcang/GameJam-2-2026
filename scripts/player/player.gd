@@ -2,12 +2,20 @@ extends CharacterBody2D
 
 
 const SPEED = 500.0
+const FIRE_RATE = 0.5
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var bullet_speed = 2000
 var bullet = preload("res://scenes/bullet.tscn")
+var fire_timer = 0.0
 
 func _physics_process(delta: float) -> void:
 	process_movement()
+	fire_timer -= delta
+	if fire_timer <= 0:
+		fire()
+		fire_timer = FIRE_RATE
+		
 	move_and_slide()
 
 func process_movement() -> void:
@@ -19,9 +27,6 @@ func process_movement() -> void:
 	look_at(get_global_mouse_position())
 	
 	play_animation(direction)
-	
-	if Input.is_action_just_pressed("fire"):
-		fire()
 
 
 func play_animation(dir: Vector2) -> void:
