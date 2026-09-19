@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvnkeeafj7121"]
+
+[ext_resource type="Texture2D" uid="uid://ddxem456idppd" path="res://assets/bullet/white_square.jpg" id="1_mkf8s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y25gk"]
+size = Vector2(46, 10)
+
+[node name="Bullet" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y25gk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.536743e-07, -0.4859488)
+scale = Vector2(-0.20938598, -0.04347548)
+texture = ExtResource("1_mkf8s")
