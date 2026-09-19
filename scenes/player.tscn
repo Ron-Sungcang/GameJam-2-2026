@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cja1460ph2rjk"]
+
+[ext_resource type="Texture2D" uid="uid://bu5t4utylnls3" path="res://assets/icon.svg" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://brobt7y25dq13" path="res://scripts/player/player.gd" id="1_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qhqgy")
+frame_progress = 0.8873056
+
+[node name="Camera2D" type="Camera2D" parent="."]
