@@ -8,3 +8,8 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * SPEED
 	look_at(player.position)
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("bullets"):
+		print("Damage enemy")

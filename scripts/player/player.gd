@@ -42,8 +42,11 @@ func play_animation(dir: Vector2) -> void:
 		
 func fire():
 	var bullet_instance = bullet.instantiate()
+
 	bullet_instance.global_position = global_position
 	bullet_instance.global_rotation = global_rotation
-	get_tree().root.add_child(bullet_instance)
+
+	get_tree().current_scene.add_child(bullet_instance)
+
 	var direction = Vector2.RIGHT.rotated(global_rotation)
 	bullet_instance.apply_central_impulse(direction * bullet_speed)

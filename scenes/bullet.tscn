@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y25gk"]
 size = Vector2(46, 10)
 
-[node name="Bullet" type="RigidBody2D"]
+[node name="Bullet" type="RigidBody2D" groups=["bullets"]]
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

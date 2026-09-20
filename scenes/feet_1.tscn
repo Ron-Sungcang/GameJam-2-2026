@@ -26,3 +26,5 @@ modulate = Color(1, 0, 0, 1)
 position = Vector2(-0.50000095, 1.5)
 scale = Vector2(0.32500002, 0.315)
 texture = ExtResource("2_gsg4v")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
