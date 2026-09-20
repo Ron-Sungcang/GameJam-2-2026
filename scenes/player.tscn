@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cja1460ph2rjk"]
+[gd_scene load_steps=20 format=3 uid="uid://cja1460ph2rjk"]
 
 [ext_resource type="Script" uid="uid://brobt7y25dq13" path="res://scripts/player/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c6luers0a0ktf" path="res://assets/player/prototype_character.png" id="2_g2els"]
@@ -127,6 +127,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(12.25, 13.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(13.5, 15.5)
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(4, 4)
 collision_mask = 8
@@ -143,3 +146,17 @@ position = Vector2(0.125, 0.25)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -400
+limit_top = -310
+limit_right = 1770
+limit_bottom = 950
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.25, 0.5)
+shape = SubResource("RectangleShape2D_qhqgy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -28,6 +28,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		print("Damage enemy")
 		take_damage(body.damage)
 		body.add_collision_exception_with(self)
+		target = get_parent().get_node("Player")
 
 
 func _on_sight_body_entered(body: Node2D) -> void:

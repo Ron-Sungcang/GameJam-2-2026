@@ -15,6 +15,11 @@ run/main_scene="uid://bdxhi8nm28o3k"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [dotnet]
 
 project/assembly_name="gamejam2"

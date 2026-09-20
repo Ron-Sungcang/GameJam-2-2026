@@ -1,18 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdxhi8nm28o3k"]
+[gd_scene load_steps=2 format=3 uid="uid://bdxhi8nm28o3k"]
 
-[ext_resource type="PackedScene" uid="uid://cja1460ph2rjk" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="Texture2D" uid="uid://bu5t4utylnls3" path="res://assets/icon.svg" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://drd3rl0dorwff" path="res://scenes/feet_1.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://c0y10cmb7707q" path="res://scenes/level_root.tscn" id="1_sugp2"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(583, 274)
-
-[node name="Node" type="Node" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Node"]
-position = Vector2(374, 289)
-texture = ExtResource("2_0wfyh")
-
-[node name="feet1" parent="." instance=ExtResource("3_sugp2")]
+[node name="LevelRoot" parent="." instance=ExtResource("1_sugp2")]
