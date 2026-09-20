@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://drd3rl0dorwff"]
+[gd_scene load_steps=6 format=3 uid="uid://drd3rl0dorwff"]
 
 [ext_resource type="Script" uid="uid://b6fcf1soxuyis" path="res://scripts/enemy/feet_1.gd" id="1_5gpdh"]
 [ext_resource type="Texture2D" uid="uid://ddxem456idppd" path="res://assets/bullet/white_square.jpg" id="2_gsg4v"]
@@ -9,13 +9,20 @@ size = Vector2(64, 62)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpvwl"]
 size = Vector2(72, 70)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gpdh"]
+radius = 204.53362
+
 [node name="feet1" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 12
 script = ExtResource("1_5gpdh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hfk3e")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 1)
@@ -27,4 +34,11 @@ position = Vector2(-0.50000095, 1.5)
 scale = Vector2(0.32500002, 0.315)
 texture = ExtResource("2_gsg4v")
 
+[node name="Sight" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight"]
+shape = SubResource("CircleShape2D_5gpdh")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
